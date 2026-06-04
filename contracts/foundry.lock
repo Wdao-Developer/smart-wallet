@@ -1,0 +1,26 @@
+{
+  "lib/calibur": {
+    "tag": {
+      "name": "v1.0.0",
+      "rev": "35d80918e120d177a49d3d90bcd4dd011caedd32"
+    }
+  },
+  "lib/forge-std": {
+    "tag": {
+      "name": "v1.16.1",
+      "rev": "620536fa5277db4e3fd46772d5cbc1ea0696fb43"
+    }
+  },
+  "lib/hookmate": {
+    "tag": {
+      "name": "v0.5.1",
+      "rev": "6c43b0ea438a09782c808a7508f94aaae912ad5f"
+    }
+  },
+  "lib/uniswap-hooks": {
+    "rev": "acbd604c409a827f7f98c9517236da860c4fca1a"
+  },
+  "lib/universal-router": {
+    "rev": "41183d6eb154f0ab0e74a0e911a5ef9ea51fc4bd"
+  }
+}
