@@ -14,6 +14,10 @@ out/
 # Docs
 docs/
 
+# nodejs
+
+/node_modules
+
 # Dotenv file
 .env
 .env.*
