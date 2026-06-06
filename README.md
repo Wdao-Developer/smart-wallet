@@ -24,12 +24,20 @@ Create a .env file in the root directory and configure the necessary keys (e.g.,
 ### Use encrypted keystores
 
 ```shell
+cast wallet new
+```
+```shell
 cast wallet import deployer2026 --interactive
 ```
 
 ### Deploy
-
 ```shell
+# default port is 8545
+$ anvil
+```
+```shell
+$ # 部署本地测试 Deploy in local
+$ forge script script/DeployFactoryAndWallet.s.sol:DeployFactoryAndWallet --rpc-url localhost --account deployer2026 --broadcast 
 $ # 部署币安链 Deploy in BSC
 $ forge script script/DeployFactoryAndWallet.s.sol:DeployFactoryAndWallet --rpc-url bnb_smart_chain --account deployer2026 --sender <YOUR_ADDRESS> --broadcast --verify --etherscan-api-key $ETHERSCAN_TOKEN
 

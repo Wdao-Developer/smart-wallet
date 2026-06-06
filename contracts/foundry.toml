@@ -2,7 +2,12 @@
 src = "src"
 out = "out"
 libs = ["lib"]
-
+ignored_error_codes = [
+  9107,2072
+]
+fs_permissions = [
+ { access = "write", path = "./deploy_ContractsABIs" }
+]
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
 [etherscan]
   arbitrum = { key = "${ARBISCAN_TOKEN}" }
@@ -20,7 +25,6 @@ libs = ["lib"]
   unichain = { key = "${ETHERSCAN_TOKEN}" }
 
 [rpc_endpoints]
-
   arbitrum = "https://burned-hardworking-dust.arbitrum-mainnet.quiknode.pro/${WEB3_QUICKNODE_ARB}/"
   avalanche = "https://avalanche-mainnet.infura.io/v3/${WEB3_INFURA_PROJECT_ID}"
   blast_sepolia = "https://red-billowing-sanctuary.blast-sepolia.quiknode.pro/${WEB3_QUICKNODE_ID}"

@@ -80,18 +80,22 @@ abstract contract Deployers {
         }
 
         permit2 = IPermit2(permit2Address);
+        //saveContracts("permit2",address(permit2));
     }
 
     //部署PoolManager
      function deployPoolManager() internal virtual {
+         //local network
         if (block.chainid == 31337) {
             poolManager = IPoolManager(V4PoolManagerDeployer.deploy(address(0x4444)));
         } else {
             poolManager = IPoolManager(AddressConstants.getPoolManagerAddress(block.chainid));
         }
+        //saveContracts("poolManager",address(poolManager));
     }
     //部署PositionManager
     function deployPositionManager() internal virtual {
+         //local network
         if (block.chainid == 31337) {
             positionManager = IPositionManager(
                 V4PositionManagerDeployer.deploy(
@@ -101,20 +105,24 @@ abstract contract Deployers {
         } else {
             positionManager = IPositionManager(AddressConstants.getPositionManagerAddress(block.chainid));
         }
+        
+        //saveContracts("positionManager",address(positionManager));
     }
     //部署UniSwapV4 Router
     function deployRouter() internal virtual {
+        //local network
         if (block.chainid == 31337) {
             swapRouter = IUniswapV4Router04(payable(V4RouterDeployer.deploy(address(poolManager), address(permit2))));
         } else {
             swapRouter = IUniswapV4Router04(payable(AddressConstants.getV4SwapRouterAddress(block.chainid)));
         }
+        //saveContracts("swapV4Router",address(swapRouter));
     }
 
     function _etch(address, bytes memory) internal virtual {
         revert("Not implemented");
     }
-
+    
     function deployArtifacts() internal {
         
         deployPermit2();

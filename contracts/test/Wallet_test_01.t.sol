@@ -61,11 +61,13 @@ contract Wallet_Test_01 is BaseTest {
 
         //3.构建工厂函数
         factory = new WalletFactory();
+        saveContracts("WalletFactory",address(factory),block.chainid);
 
         //4.根据以上3个地址再部署代理钱包
         proxyWallet = new ProxyWallet(
             address(swapRouter), address(poolManager), address(permit2), address(poolManager), address(factory)
         );
+        saveContracts("ProxyWallet",address(proxyWallet),block.chainid);
 
         //5.创建资金池
         //currency0->代币0，currency1->代币1，3000->费用,60->池子的 tick 间隔,IHooks->hooks地址(此处为0表示空)

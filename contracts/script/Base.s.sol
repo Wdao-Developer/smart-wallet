@@ -53,6 +53,7 @@ contract BaseScript is Script, Deployers {
         }
     }
     function _etch(address target, bytes memory bytecode) internal override {
+        //localhost net
         if (block.chainid == 31337) {
             vm.rpc("anvil_setCode", string.concat('["', vm.toString(target), '",', '"', vm.toString(bytecode), '"]'));
         } else {

@@ -20,9 +20,20 @@ contract DeployFactoryAndWallet is Script {
             AddressConstants.getPositionManagerAddress(block.chainid),
             address(factory)
         );
+        //saveContracts("WalletFactory",address(factory));
+        //saveContracts("ProxyWallet",address(walletImpl));
         vm.stopBroadcast();
 
         console2.log("WalletFactory deployed at:", address(factory));
         console2.log("ProxyWallet deployed at:", address(walletImpl));
     }
+
+    // function saveContracts(string memory name,address addr) internal {
+    //     string memory chainId = vm.toString(block.chainId);
+    //     string memory json1="key";
+    //     string memory finalJson = vm.serializeAddress(json1, "address", addr);
+    //     string memory dirPath = string.concat(string.concat("deploy_ContractsABIs/", name), "_");
+    //     vm.writeJson(finalJson, string.concat(dirPath, string.concat(chainId, ".json"))); 
+
+    // }
 }
