@@ -37,7 +37,10 @@ $ # 部署uni链 Deploy in Unichain
 $ forge script script/DeployFactoryAndWallet.s.sol:DeployFactoryAndWallet --rpc-url unichain  --account deployer2026 --sender <YOUR_ADDRESS> --broadcast --verify --etherscan-api-key $ETHERSCAN_TOKEN 
 
 $ # 使用Uniswap V4头寸运行演示不停转账的脚本 Run Script for Demo Unstopable transfers from Uniswap V4 position
-$  forge script script/InteracteScript_m.s.sol:InteracteScript --rpc-url bnb_smart_chain  --broadcast --via-ir --account deployer2026
-$  forge script script/InteracteScript_m.s.sol:InteracteScript --rpc-url unichain  --broadcast --via-ir --account deployer2026
+$ #  forge script script/InteracteScript_m.s.sol:InteracteScript --rpc-url bnb_smart_chain  --broadcast --via-ir --account deployer2026
+$ # forge script script/InteracteScript_m.s.sol:InteracteScript --rpc-url unichain  --broadcast --via-ir --account deployer2026
 ```
-
+### Test
+```shell
+forge test -vvvv
+```
