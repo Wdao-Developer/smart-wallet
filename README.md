@@ -58,6 +58,10 @@ $ cast call <CURRENCY0_ADDRESS> "mint(address,uint256)" <PROXY_WALLET_ADDERSS> <
 $ cd  frontend
 $ npm run dev
 ```
+#### 5.连接钱包后将anvil创建的钱包导入METAMASK
+
+#### 6.打开浏览器http://localhost:3000,连接小狐狸钱包，输入currency0、currency1、代理钱包(ProxyWallet.sol)地址、最终出币的货币地址、要交易的账户、交易数量，模拟swapAndTransfer方法
+
 ### Deploy in main Chain
 ```shell
 $ ## 确认<YOUR_WALLET_ACCOUNTS_ADDRESS>  这个是自己的钱包账号，并且里面有余额(部署上链需要真ETH)
