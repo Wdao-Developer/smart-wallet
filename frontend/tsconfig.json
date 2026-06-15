@@ -20,8 +20,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "out/*":["../contracts/out/*"],
-      "addr/*":["../contracts/deploy_ContractsABIS/*"]
+      "abi/*":["./abi/*"],
+      "addr/*":["../contracts/deploy_ContractsAddr/*"]
     }
   },
   "include": [

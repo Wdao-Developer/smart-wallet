@@ -126,7 +126,7 @@ contract DeployFactoryAndWalletLocal is Script{
         
      }
      //部署Permit2
-    function deployPermit2(address coinbase) internal {
+    function deployPermit2() internal {
         //address permit2Address = AddressConstants.getPermit2Address();
 
         // if (permit2Address.code.length > 0) {
@@ -176,8 +176,8 @@ contract DeployFactoryAndWalletLocal is Script{
     function deployCurrencyPair(address coinbase) internal virtual returns (Currency currency0, Currency currency1) {
         MockERC20 token0 = deployToken(coinbase,"LRT", 10_000_000e18, 6);
         MockERC20 token1 = deployToken(coinbase,"REV", 20_000_000e18, 6);
-
-        if (token0  > token1 ){
+        //确保token0地址小于token1
+        if (address(token0)  > address(token1) ){
             (token0, token1) = (token1, token0);
         }
 
